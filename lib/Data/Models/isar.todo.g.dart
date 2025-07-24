@@ -17,9 +17,9 @@ const IsarToDoSchema = CollectionSchema(
   name: r'IsarToDo',
   id: -7875673866669236428,
   properties: {
-    r'isCompleted': PropertySchema(
+    r'isComplete': PropertySchema(
       id: 0,
-      name: r'isCompleted',
+      name: r'isComplete',
       type: IsarType.bool,
     ),
     r'text': PropertySchema(
@@ -58,7 +58,7 @@ void _isarToDoSerialize(
   List<int> offsets,
   Map<Type, List<int>> allOffsets,
 ) {
-  writer.writeBool(offsets[0], object.isCompleted);
+  writer.writeBool(offsets[0], object.isComplete);
   writer.writeString(offsets[1], object.text);
 }
 
@@ -70,7 +70,7 @@ IsarToDo _isarToDoDeserialize(
 ) {
   final object = IsarToDo();
   object.id = id;
-  object.isCompleted = reader.readBool(offsets[0]);
+  object.isComplete = reader.readBool(offsets[0]);
   object.text = reader.readString(offsets[1]);
   return object;
 }
@@ -232,11 +232,11 @@ extension IsarToDoQueryFilter
     });
   }
 
-  QueryBuilder<IsarToDo, IsarToDo, QAfterFilterCondition> isCompletedEqualTo(
+  QueryBuilder<IsarToDo, IsarToDo, QAfterFilterCondition> isCompleteEqualTo(
       bool value) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
-        property: r'isCompleted',
+        property: r'isComplete',
         value: value,
       ));
     });
@@ -380,15 +380,15 @@ extension IsarToDoQueryLinks
     on QueryBuilder<IsarToDo, IsarToDo, QFilterCondition> {}
 
 extension IsarToDoQuerySortBy on QueryBuilder<IsarToDo, IsarToDo, QSortBy> {
-  QueryBuilder<IsarToDo, IsarToDo, QAfterSortBy> sortByIsCompleted() {
+  QueryBuilder<IsarToDo, IsarToDo, QAfterSortBy> sortByIsComplete() {
     return QueryBuilder.apply(this, (query) {
-      return query.addSortBy(r'isCompleted', Sort.asc);
+      return query.addSortBy(r'isComplete', Sort.asc);
     });
   }
 
-  QueryBuilder<IsarToDo, IsarToDo, QAfterSortBy> sortByIsCompletedDesc() {
+  QueryBuilder<IsarToDo, IsarToDo, QAfterSortBy> sortByIsCompleteDesc() {
     return QueryBuilder.apply(this, (query) {
-      return query.addSortBy(r'isCompleted', Sort.desc);
+      return query.addSortBy(r'isComplete', Sort.desc);
     });
   }
 
@@ -419,15 +419,15 @@ extension IsarToDoQuerySortThenBy
     });
   }
 
-  QueryBuilder<IsarToDo, IsarToDo, QAfterSortBy> thenByIsCompleted() {
+  QueryBuilder<IsarToDo, IsarToDo, QAfterSortBy> thenByIsComplete() {
     return QueryBuilder.apply(this, (query) {
-      return query.addSortBy(r'isCompleted', Sort.asc);
+      return query.addSortBy(r'isComplete', Sort.asc);
     });
   }
 
-  QueryBuilder<IsarToDo, IsarToDo, QAfterSortBy> thenByIsCompletedDesc() {
+  QueryBuilder<IsarToDo, IsarToDo, QAfterSortBy> thenByIsCompleteDesc() {
     return QueryBuilder.apply(this, (query) {
-      return query.addSortBy(r'isCompleted', Sort.desc);
+      return query.addSortBy(r'isComplete', Sort.desc);
     });
   }
 
@@ -446,9 +446,9 @@ extension IsarToDoQuerySortThenBy
 
 extension IsarToDoQueryWhereDistinct
     on QueryBuilder<IsarToDo, IsarToDo, QDistinct> {
-  QueryBuilder<IsarToDo, IsarToDo, QDistinct> distinctByIsCompleted() {
+  QueryBuilder<IsarToDo, IsarToDo, QDistinct> distinctByIsComplete() {
     return QueryBuilder.apply(this, (query) {
-      return query.addDistinctBy(r'isCompleted');
+      return query.addDistinctBy(r'isComplete');
     });
   }
 
@@ -468,9 +468,9 @@ extension IsarToDoQueryProperty
     });
   }
 
-  QueryBuilder<IsarToDo, bool, QQueryOperations> isCompletedProperty() {
+  QueryBuilder<IsarToDo, bool, QQueryOperations> isCompleteProperty() {
     return QueryBuilder.apply(this, (query) {
-      return query.addPropertyName(r'isCompleted');
+      return query.addPropertyName(r'isComplete');
     });
   }
 

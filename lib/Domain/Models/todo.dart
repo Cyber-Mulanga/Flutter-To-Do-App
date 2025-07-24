@@ -1,17 +1,15 @@
 class ToDo {
   final int id;
   final String text;
-  final bool isCompleted;
+  final bool isComplete;
 
-  ToDo({required this.id, required this.text, required this.isCompleted});
+  ToDo({required this.id, required this.text, this.isComplete = false});
 
-
-  ToDo completedEntry(){
+  ToDo completedEntry() {
     return ToDo(
       id: id,
       text: text,
-      isCompleted: !isCompleted
+      isComplete: !isComplete,
     );
   }
-
 }

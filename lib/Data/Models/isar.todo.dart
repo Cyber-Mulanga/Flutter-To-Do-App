@@ -1,5 +1,5 @@
-import 'package:to_do_app/Domain/Models/todo.dart';
 import 'package:isar/isar.dart';
+import 'package:to_do_app/Domain/Models/todo.dart';
 
 part 'isar.todo.g.dart';
 
@@ -7,18 +7,22 @@ part 'isar.todo.g.dart';
 class IsarToDo {
   Id id = Isar.autoIncrement;
   late String text;
-  late bool isCompleted;
+  bool isComplete = false;
 
   //Convert Model to Domain
   ToDo toDomain() {
-    return ToDo(id: id, text: text, isCompleted: isCompleted);
+    return ToDo(
+      id: id,
+      text: text,
+      isComplete: isComplete,
+    );
   }
 
-  //Convert Domain to Model
-  static IsarToDo fromDomain(ToDo todo) {
+  //Convert from Domain to Model
+  static IsarToDo fromDomain(ToDo todo){
     return IsarToDo()
     ..id = todo.id
     ..text = todo.text
-    ..isCompleted = todo.isCompleted;
+    ..isComplete = todo.isComplete;
   }
 }
