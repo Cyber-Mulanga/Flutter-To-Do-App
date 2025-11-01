@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'todo_isar.dart';
+part of 'isar_todo.dart';
 
 // **************************************************************************
 // IsarCollectionGenerator

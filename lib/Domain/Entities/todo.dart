@@ -11,12 +11,12 @@ class ToDo {
     this.isCompleted = false,
   });
 
-  ToDo toggleEntry() {
+  ToDo toggleCompleted(){
     return ToDo(
       id: id,
-      title: title,
-      description: description,
-      isCompleted: !isCompleted,
+      title : title,
+      description : description,
+      isCompleted : !isCompleted
     );
   }
 }

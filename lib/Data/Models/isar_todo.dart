@@ -1,7 +1,7 @@
-import 'package:flutter_todo_app/Domain/Entitites/todo.dart';
+import 'package:flutter_todo_app/Domain/Entities/todo.dart';
 import 'package:isar/isar.dart';
 
-part 'todo_isar.g.dart';
+part 'isar_todo.g.dart';
 
 @Collection()
 class IsarToDo {
@@ -9,7 +9,6 @@ class IsarToDo {
   late String title;
   late String description;
   late bool isCompleted;
-
 
   ToDo toEntity() {
     return ToDo(
@@ -20,11 +19,11 @@ class IsarToDo {
     );
   }
 
- static IsarToDo fromEntity(ToDo todo){
-  return IsarToDo()
-  ..id = todo.id
-  ..title = todo.title
-  ..description = todo.description
-  ..isCompleted = todo.isCompleted;
- }
+  static fromEntity(ToDo todo) {
+    return IsarToDo()
+      ..id = todo.id
+      ..title = todo.title
+      ..description = todo.description
+      ..isCompleted = todo.isCompleted;
+  }
 }
